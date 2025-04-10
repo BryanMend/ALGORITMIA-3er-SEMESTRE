@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Verificar Edad</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+      background-color: #f4f4f4;
+    }
+
+    #edad {
+      padding: 10px;
+      margin: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      width: 200px;
+    }
+
+    #verificar {
+      padding: 10px 20px;
+      background-color: #3043af;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    #resultado {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Verificador de Edad</h1>
+
+  <label for="edad">Edad:</label>
+  <input type="number" id="edad" oninput="validarEntrada(this)">
+
+  <button id="verificar" onclick="verificarEdad()">Verificar</button>
+
+  <p id="resultado"></p>
+
+  <script>
+    function validarEntrada(input) {
+      // Eliminar caracteres no numéricos
+      input.value = input.value.replace(/[^0-9]/g, '');
+    }
+
+    function esMayorDeEdad(edad) {
+      if (edad <= 17) {
+        return "Menor de Edad";
+      } else {
+        return "Mayor de Edad";
+      }
+    }
+
+    function verificarEdad() {
+      const edadInput = document.getElementById("edad");
+      const resultadoParrafo = document.getElementById("resultado");
+      let edad = parseInt(edadInput.value);
+
+      if (isNaN(edad)) {
+        resultadoParrafo.textContent = "Por favor, ingrese una edad válida.";
+        return;
+      }
+
+      if (edad < 0) {
+        resultadoParrafo.textContent = "Por favor, ingrese una edad positiva.";
+        return;
+      }
+
+      if (!Number.isInteger(edad)) {
+        resultadoParrafo.textContent = "Por favor, ingrese una edad entera (sin decimales).";
+        return;
+      }
+
+
+      const resultado = esMayorDeEdad(edad);
+      resultadoParrafo.textContent = resultado;
+    }
+  </script>
+
+</body>
+</html>
