@@ -1,0 +1,63 @@
+/* Estilos básicos */
+body {
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+}
+
+#csvOutput {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  display: none; /* Oculta la tabla por defecto */
+}
+
+#csvOutput th, #csvOutput td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+#csvOutput th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+/* Estilos para la tabla de grupos */
+#groupsTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  display: none; /* Oculta la tabla de grupos por defecto */
+}
+
+#groupsTable th, #groupsTable td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+#groupsTable th {
+  background-color: #3498db;
+  color: white;
+  font-weight: bold;
+}
+
+/* Agrega estilo para los grupos */
+.group {
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+/* Estilos para el contenedor de grupos */
+#groupsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Ajusta el espacio entre los grupos */
+}
